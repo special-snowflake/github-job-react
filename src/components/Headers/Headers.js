@@ -6,17 +6,24 @@ function Header() {
   return (
     <header
       style={{
-        backgroundColor: 'blue',
-        height: '100px',
-        position: 'fixed',
+        backgroundColor: '#0d6efd',
+        height: '80px',
         top: 0,
         left: 0,
         right: 0,
+        zIndex: 100,
+        marginBottom: 80,
       }}
     >
-      <div className="container h-100">
+      <div className="h-100 ps-3">
         <Link to="/dashboard" className="h-100 d-flex align-items-center">
-          <img src={logo} alt="Logo" />
+          <img
+            src={logo}
+            alt="Logo"
+            style={{
+              height: '35px',
+            }}
+          />
         </Link>
       </div>
     </header>

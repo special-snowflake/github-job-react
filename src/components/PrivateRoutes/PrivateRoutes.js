@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
 const useAuth = () => {
   const token = localStorage.getItem('token');
   let loggedIn = true;
@@ -10,11 +11,13 @@ const useAuth = () => {
 
 function PrivateRoutes() {
   const isAuth = useAuth();
+
   useEffect(() => {
     if (!isAuth) {
-      toast.warning(`You don't have access to this page`);
+      toast.warning(`You don't have access to this page.`);
     }
-  }, [isAuth]);
+  }, []);
+
   return isAuth ? <Outlet /> : <Navigate to="/login" replace={true} />;
 }
 

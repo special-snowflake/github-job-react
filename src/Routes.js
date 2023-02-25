@@ -2,10 +2,10 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PublicRoutes from './components/PublicRoutes/PublicRoutes';
 import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes';
+import JobDetail from './pages/JobDetail/JobDetail';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const Login = lazy(() => import('./pages/Login/Login'));
 const Dashboard = lazy(() => import('./pages/Dashboard/Dashboard'));
-// const About = lazy(() => import('./routes/About'));
-
 const App = () => (
   <Router>
     <Suspense fallback={<div>Loading...</div>}>
@@ -16,6 +16,7 @@ const App = () => (
         </Route>
         <Route element={<PrivateRoutes />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/detail/:id" element={<JobDetail />} />
         </Route>
       </Routes>
     </Suspense>

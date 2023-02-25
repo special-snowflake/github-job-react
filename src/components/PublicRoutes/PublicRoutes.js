@@ -13,9 +13,9 @@ function PublicRoutes() {
   const isAuth = useAuth();
   useEffect(() => {
     if (isAuth) {
-      toast.warning(`You don't have access to this page`);
+      toast.warning(`You don't have access to this page.`);
     }
-  }, [isAuth]);
+  }, []);
   return isAuth ? <Navigate to="/dashboard" replace={true} /> : <Outlet />;
 }
 

@@ -1,0 +1,12 @@
+.top-border {
+  border: 10px solid;
+  border-image: linear-gradient(to bottom, rgb(209, 209, 209), white) 1;
+}
+
+.normal-border {
+  border: 10px solid rgba(209, 209, 209, 0.5);
+}
+
+.bg-yellow{
+  background-color: #f0dcb780;
+}
